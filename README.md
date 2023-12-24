@@ -31,7 +31,7 @@ manage.py: Django management script.
 ## Technologies Used
 
 - **Django**
-- **HTMLL**
+- **HTML**
 - **CSS** 
 - **Bootstrap** 
 
