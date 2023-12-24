@@ -1,9 +1,52 @@
 body {
-    background-color: red;
+    animation: gradientAnimation 300s infinite alternate;
+    background-image: url('newb.jpg');
+    background-size: cover;
+
+
 }
 
-div {
+.col-md-3 {
+    margin-right: 10px;
+    /* Adjust the value to set the desired space between images */
+}
+
+.card {
+    /* Additional styling for cards */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.text-class {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    /* Increase the font size for better visibility */
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.445);
+    /* Add a black outline */
+
+}
+
+.text-c {
+    font-size: 20px;
+}
+
+.hide-text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
