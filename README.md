@@ -1,4 +1,4 @@
-![image](https://github.com/ahanaftanvir40/Digital-Food-Menu/assets/111105281/03abb603-f3fe-4cd3-ba37-d46b2b0b00d8)# Digital Food Menu Project
+![image](https://github.com/ahanaftanvir40/Digital-Food-Menu/assets/111105281/03abb603-f3fe-4cd3-ba37-d46b2b0b00d8)## Digital Food Menu Project
 
 This project is a Digital Food Menu application developed using Django. It's a beginner-friendly project that allows users to manage a digital menu by adding, removing, and updating food items along with their descriptions and prices.
 
