@@ -18,6 +18,7 @@ Follow these steps to set up and run the Digital Food Menu project on your local
    ```bash
    git clone https://github.com/ahanaftanvir40/digital-food-menu.git
    cd digital-food-menu
+   ```
 
 **Access the Food Menu:**
  Visit http://localhost:8000/food to view, add, update, and remove food items.
