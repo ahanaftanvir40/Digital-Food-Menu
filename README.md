@@ -39,7 +39,7 @@ manage.py: Django management script.
 ## Contributing
 Contributions are welcome! Feel free to submit issues, feature requests, or pull requests.
 
-License
+##License
 This Digital Food Menu project is open-source and available under the MIT License.
 
 
