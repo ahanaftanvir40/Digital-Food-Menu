@@ -15,27 +15,33 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark" style="background-color: rgba(0, 0, 0, 0.7);">
-        <a href="#" class="navbar-brand">Digital Food Menu</a>
 
-        <div class="navbar">
-            <a class="nav-item nav-link" href="{% url 'food:create_item' %}">Add Item</a>
-            <a class="nav-item nav-link" href="#">Delete Item</a>
-            <a class="nav-item nav-link" href="#">View Item</a>
+    <body>
+        <nav class="navbar navbar-dark"
+            style="background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: space-between; align-items: center;">
+            <a href="#" class="navbar-brand">Digital Food Menu</a>
+
+            <div class="navbar">
+                {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'food:create_item' %}">Add Item</a>
+                <a class="nav-item nav-link" href="#">Delete Item</a>
+                <a class="nav-item nav-link" href="#">View Item</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                {% endif %}
+            </div>
+
             {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}">Logout</a>
-            {% else %}
-            <a href="{% url 'login' %}">Login</a>
+            <span class="welcome-message" style="color: white;">Welcome, {{ request.user }}!</span>
             {% endif %}
-        </div>
-    </nav>
-    {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-{{message.tags}}">
-        {{message}}
-    </div>
-    {% endfor %}
-    {% endif %}
+        </nav>
+    </body>
+
+
+
+
+
     <br>
 
     {% block body %}
