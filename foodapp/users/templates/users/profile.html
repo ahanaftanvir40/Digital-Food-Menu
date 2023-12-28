@@ -1,0 +1,26 @@
+{% extends 'food/base.html' %}
+
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <div class="card" style="width: 18rem;">
+        <img src="{{user.profile.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Username: {{request.user}}</h5>
+            <p class="card-text"></p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">First Name: {{request.user.first_name}}</li>
+            <li class="list-group-item">Last Name: {{request.user.last_name}}</li>
+            <li class="list-group-item">Email: {{request.user.email}}</li>
+            <li class="list-group-item">Location: {{request.user.profile.location}}</li>
+        </ul>
+        <div class="card-body">
+            <a href="{% url 'food:index' %}" class="card-link">Home</a>
+            <a href="#" class="card-link">Another link</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

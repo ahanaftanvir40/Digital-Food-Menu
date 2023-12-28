@@ -17,12 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from food.views import*
+from users import views as user_view
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('food/', include('food.urls')),
-    path('login/', login_page, name='login' ),
-    path('register/', register, name= 'register'),
-    path('logout/', logout_page, name= 'logout'),
+    path('login/', user_view.login_page, name='login' ),
+    path('register/', user_view.register, name= 'register'),
+    path('logout/', user_view.logout_page, name= 'logout'),
+    path('profile/', user_view.profile_page, name= 'profile'),
     
 ]
+
+
+
+urlpatterns += [
+    # ... the rest of your URLconf goes here ...
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
