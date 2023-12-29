@@ -6,11 +6,13 @@ from django.shortcuts import redirect
 from .forms import ItemForm
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.views.generic.list import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin #login req for class based
 
 from django.contrib.auth.decorators import login_required #needs login to view page
 
 # Create your views here.
-@login_required(login_url='login')
+
 def index(request):
     item_list = Item.objects.all()
     
@@ -18,6 +20,13 @@ def index(request):
         'item_list' : item_list,
     }
     return render(request , 'food/index.html' , context)
+
+# implementing class based view for index
+
+class IndexClassView(LoginRequiredMixin ,ListView):
+    model = Item
+    template_name = 'food/index.html'
+    context_object_name = 'item_list'
 
 def item(request):
     return HttpResponse('this is item view')
