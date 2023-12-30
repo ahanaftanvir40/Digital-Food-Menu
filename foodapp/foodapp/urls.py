@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('food/', include('food.urls')),
+    path('', include('food.urls')),
     path('login/', user_view.login_page, name='login' ),
     path('register/', user_view.register, name= 'register'),
     path('logout/', user_view.logout_page, name= 'logout'),
@@ -36,3 +36,7 @@ urlpatterns = [
 urlpatterns += [
     # ... the rest of your URLconf goes here ...
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [
+    # ... the rest of your URLconf goes here ...
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
