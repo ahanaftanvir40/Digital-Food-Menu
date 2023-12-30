@@ -35,6 +35,11 @@ body {
     font-size: 20px;
 }
 
+.text-u {
+    font-size: 10px !important; 
+    color: aqua !important;
+}
+
 .hide-text {
     white-space: nowrap;
     overflow: hidden;

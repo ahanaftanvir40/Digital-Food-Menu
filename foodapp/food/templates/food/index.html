@@ -21,7 +21,9 @@
         <div class="col-md-4 hide-text">
             <h3 class="text-class">{{ item.item_name }}</h3>
             <h5 class="text-c">{{ item.item_desc }}</h5>
+            <h5 class='text-c'>Posted by : {{item.user_name}}</h5>
             <h6 class="text-c">{{ item.item_price }}Tk</h6>
+            
         </div>
         <div class="col-md-2">
             <a href="{% url 'food:detail' item.id %}" class="btn btn-success">More Details</a> <br> <br>
